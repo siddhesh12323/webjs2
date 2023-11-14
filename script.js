@@ -38,6 +38,7 @@ document.getElementById("myButton").onclick = function () {
 }
 */
 
+/*
 let count = 0;
 document.getElementById("increment").onclick = function () {
     count++;
@@ -50,4 +51,21 @@ document.getElementById("decrement").onclick = function () {
 document.getElementById("reset").onclick = function () {
     count = 0;
     document.getElementById("myP").innerHTML = count;
+}
+*/
+
+let numberOfSides;
+let numberOfDice;
+let output;
+
+document.getElementById("roll").onclick = function () {
+    numberOfSides = document.getElementById("input1").value;
+    numberOfDice = document.getElementById("input2").value;
+    for (let index = 0; index < numberOfDice; index++) {
+        output = Math.floor(Math.random()*numberOfSides) + 1;
+        let paragraph = document.createElement("p");
+        paragraph.textContent = "Output of dice #" + String((index + 1)) + ":- " + String(output);
+        document.getElementById("myDiv").appendChild(paragraph);
+        document.getElementById("myDiv").appendChild(document.createElement("br"));
+    }
 }
